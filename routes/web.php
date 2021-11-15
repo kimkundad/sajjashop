@@ -13,11 +13,52 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+Auth::routes();
+
+Route::get('/', function () {
+    return view('404');
+});
+
+Route::get('/about_us', function () {
+    return view('404');
+});
+Route::get('/contact_us', function () {
+    return view('404');
+});
+Route::get('/contact_price_quotation', function () {
+    return view('404');
+});
+Route::get('/payment_option', function () {
+    return view('404');
+});
+Route::get('/delivery', function () {
+    return view('404');
+});
+Route::get('/blogs', function () {
+    return view('404');
+});
+Route::get('/blog_detail', function () {
+    return view('404');
+});
+Route::get('/category', function () {
+    return view('404');
+});
+Route::get('/terms', function () {
+    return view('404');
+});
+Route::get('/policy', function () {
+    return view('404');
+});
+Route::get('/return', function () {
+    return view('404');
+});
+
+/*
 Route::get('/', function () {
     return view('welcome');
 });
-
-Auth::routes();
 
 Route::get('/about_us', function () {
     return view('about_us');
@@ -53,3 +94,4 @@ Route::get('/return', function () {
     return view('return');
 });
 
+*/
