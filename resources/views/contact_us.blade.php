@@ -43,8 +43,8 @@
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 ">
                             <div class="ps-block--contact-info">
                                 <h4>ที่อยู่บริษัท</h4>
-                                <p><a>เปิดทำการ : <strong class="text-danger"> จันทร์-เสาร์ 8:00 - 17:00 น.</strong></a>
-                                    <span>777 หมู่4 ถ.นครอินทร์ ต.บางขุนกอง อ.บางกรวย จ.นนทบุรี 11130</span></p>
+                                <p><a>เปิดทำการ : <strong class="text-danger"> {{ setting()->company_time }}</strong></a>
+                                    <span>{{ setting()->address }}</span></p>
                             </div>
                         </div>
                         
@@ -54,22 +54,22 @@
         </div>
         <div class="ps-contact-form">
             <div class="container">
-                <form class="ps-form--contact-us" action="#" method="get">
+                <form class="ps-form--contact-us" id="contactForm">
                     <h3>สอบถามข้อมูลเพิ่มเติม</h3>
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
                             <div class="form-group">
-                                <input class="form-control" type="text" placeholder="ชื่อผู้ติดต่อ *">
+                                <input class="form-control" type="text" id="name" name="name" placeholder="ชื่อผู้ติดต่อ *">
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
                             <div class="form-group">
-                                <input class="form-control" type="text" placeholder="เบอร์โทรติดต่อ *">
+                                <input class="form-control" type="text" id="phone" name="phone" placeholder="เบอร์โทรติดต่อ *">
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
                             <div class="form-group">
-                            <input class="form-control" type="text" placeholder="เรื่องที่ต้องการติดต่อ *">
+                            <input class="form-control" type="text" id="subject" name="subject" placeholder="เรื่องที่ต้องการติดต่อ *">
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -81,12 +81,12 @@
                         </div>
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                             <div class="form-group">
-                                <textarea class="form-control" rows="5" placeholder="ข้อความที่ต้องการสอบถามเรา หรือ สินค้าที่อยากได้"></textarea>
+                                <textarea class="form-control" id="detail" name="detail" rows="5" placeholder="ข้อความที่ต้องการสอบถามเรา หรือ สินค้าที่อยากได้"></textarea>
                             </div>
                         </div>
                     </div>
                     <div class="form-group submit">
-                        <button class="ps-btn">ส่งข้อความ</button>
+                        <a class="ps-btn" id="btnSendData">ส่งข้อความ</a>
                     </div>
                 </form>
             </div>
@@ -127,5 +127,93 @@
     }
 
     google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+ $(document).on('click','#btnSendData',function (event) {
+  event.preventDefault();
+  
+  var form = $('#contactForm')[0];
+  var formData = new FormData(form);
+
+  var name = document.getElementById("name").value;
+  var detail = document.getElementById("detail").value;
+  var phone = document.getElementById("phone").value;
+  var subject = document.getElementById("subject").value;
+
+
+    console.log(formData)
+
+if(name == '' || detail == '' || phone == ''){
+
+  swal("กรูณา ป้อนข้อมูลให้ครบถ้วน");
+
+}else{
+
+  $.LoadingOverlay("show", {
+    background  : "rgba(255, 255, 255, 0.4)",
+    image       : "",
+    fontawesome : "fa fa-cog fa-spin"
+  });
+
+
+  $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="token"]').attr('value')
+    }
+});
+
+
+  $.ajax({
+      url: "{{url('/api/add_contact')}}",
+      headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+      data: formData,
+      processData: false,
+      contentType: false,
+      cache:false,
+      type: 'POST',
+      success: function (data) {
+
+      //  console.log(data.data.status)
+          if(data.data.status == 200){
+
+
+            setTimeout(function(){
+                $.LoadingOverlay("hide");
+            }, 0);
+
+            swal("สำเร็จ!", "ข้อความถูกส่งไปหาเจ้าหน้าที่เรียบร้อยแล้ว", "success");
+
+            $("#name").val('');
+            $("#detail").val('');
+            $("#subject").val('');
+            $("#phone").val('');
+
+
+          setTimeout(function(){
+            //    window.location.replace("{{url('clients/success_payment/')}}/"+data.data.value);
+          }, 3000);
+
+          }else{
+
+            setTimeout(function(){
+                $.LoadingOverlay("hide");
+            }, 500);
+
+            swal("กรูณา ป้อนข้อมูลให้ครบถ้วน");
+
+          }
+      },
+      error: function () {
+
+      }
+  });
+
+}
+
+
+});
+
+
 </script>
 @stop('scripts')

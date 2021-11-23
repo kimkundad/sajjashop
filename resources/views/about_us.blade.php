@@ -20,7 +20,7 @@
     <div class="ps-page--single" id="about-us">
         <div class="ps-about-intro" style="padding: 50px 0; 100px 0">
             <div class="container">
-            <img src="{{ url('assets/img/homepro-staff-03.jpg') }}" alt="">
+            <img src="{{ url('img/setting/'.setting()->image_3) }}" alt="">
                 <br><br>
                 <div class="ps-section__header">
                 

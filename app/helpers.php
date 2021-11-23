@@ -15,6 +15,24 @@ function formatDateThat($strDate)
     return "$strDay $strMonthThai $strYear ";
 }
 
+function setting(){
+
+    $cat = DB::table('settings')
+          ->where('id', 1)
+          ->first();
+
+    return $cat;
+  }
+
+  function categories(){
+
+    $cat = DB::table('categories')
+          ->where('status', 1)
+          ->get();
+
+    return $cat;
+  }
+
 
 
 

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ url('assets/plugins/select2/dist/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ url('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ url('assets/css/market-place-2.css') }}">
+    
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
 
     <style>
@@ -21,6 +22,9 @@
             font-family: 'Kanit', sans-serif;
             font-weight: 400;
         }
+        a {
+    cursor: pointer;
+}
         .hidden{
             display:none;
         }
@@ -46,5 +50,42 @@
 .header--mobile.header--sticky .navigation--mobile{
     background-color: #DB1B32;
 }
+.ps-product .ps-product__badge.hot img{
+    width:40px
+}
+.ps-product .ps-product__badge.hot {
+    border: 1px solid #f14705;
+    background-color: #ffffff;
+    color: #ffffff;
+}
+.ps-product .ps-product__badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 0px;
+    border-radius: 4px;
+    background-color: #f14705;
+}
+.img-responsive{
+    width:100%;
+}
+.visible-lg, .visible-md, .visible-sm, .visible-xs {
+    display: none!important;
+}
+@media (max-width: 767px){
+    .hidden-xs {
+    display: none!important;
+}
+}
+@media (max-width: 767px){
+    .visible-xs {
+    display: block!important;
+}
+}
+
 
     </style>

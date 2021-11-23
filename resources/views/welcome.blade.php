@@ -11,7 +11,42 @@ homepage
 
 
 <div id="homepage-4">
-        <div class="ps-home-banner">
+
+        <div class="ps-home-banner visible-xs">
+            <div class="">
+                <div class="row">
+                    <div class="col-md-12">
+                    <div class="ps-carousel--nav-inside owl-slider" 
+                        data-owl-auto="true" 
+                        data-owl-loop="true" 
+                        data-owl-speed="5000" 
+                        data-owl-gap="0" 
+                        data-owl-nav="true" 
+                        data-owl-dots="true" 
+                        data-owl-item="1" 
+                        data-owl-item-xs="1" 
+                        data-owl-item-sm="1" 
+                        data-owl-item-md="1" 
+                        data-owl-item-lg="1" 
+                        data-owl-duration="1000" 
+                        data-owl-mousedrag="on">
+                        @if(isset($slide))
+                            @foreach($slide as $u)
+                        <a href="{{ $u->url_btn }}"><img src="{{ url('img/slide/'.$u->image) }}"  class="img-responsive" alt="{{ $u->title }}"></a>
+                            @endforeach
+                        @endif
+                    </div>
+                    </div>
+                    <div class="col-md-12">
+                        <a class="ps-collection" href="{{ setting()->url_img1 }}">
+                            <img src="{{ url('img/setting/'.setting()->image_1) }}" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ps-home-banner hidden-xs">
             <div class="container">
                 <div class="ps-section__left">
                     <div class="ps-carousel--nav-inside owl-slider" 
@@ -28,14 +63,16 @@ homepage
                     data-owl-item-lg="1" 
                     data-owl-duration="1000" 
                     data-owl-mousedrag="on">
-                    <a href="#"><img src="{{ url('assets/img/slider/home-4/1.png') }}" alt=""></a>
-                    <a href="#"><img src="{{ url('assets/img/slider/home-4/2.png') }}" alt=""></a>
-                    <a href="#"><img src="{{ url('assets/img/slider/home-4/3.png') }}" alt=""></a>
+                    @if(isset($slide))
+                        @foreach($slide as $u)
+                    <a href="{{ $u->url_btn }}"><img src="{{ url('img/slide/'.$u->image) }}"  class="img-responsive" alt="{{ $u->title }}"></a>
+                        @endforeach
+                    @endif
                 </div>
                 </div>
                 <div class="ps-section__right">
-                    <a class="ps-collection" href="#">
-                        <img src="{{ url('assets/img/71349133_2443524469094285_4970030984067022848_n.jpg') }}" alt="">
+                    <a class="ps-collection" href="{{ setting()->url_img1 }}">
+                        <img src="{{ url('img/setting/'.setting()->image_1) }}" alt="">
                     </a>
                 </div>
             </div>
@@ -93,105 +130,21 @@ homepage
                 </div>
 
                 <div class="row">
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 ">
-                        <div class="ps-block--category" data-mh="categories">
-                            <div class="ps-block__thumbnail"><img src="{{ url('assets/img/logo_banner/logo-nawa-1.jpg') }}" alt=""></div>
-                            <div class="ps-block__content">
-                                <p>ท่อ SCG</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 ">
-                        <div class="ps-block--category" data-mh="categories">
-                            <div class="ps-block__thumbnail"><img src="{{ url('assets/img/logo_banner/logo-thaipipe.jpg') }}" alt=""></div>
-                            <div class="ps-block__content">
-                                <p>​ท่อน้ำไทย</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 ">
-                        <div class="ps-block--category" data-mh="categories">
-                            <div class="ps-block__thumbnail"><img src="{{ url('assets/img/logo_banner/uhm.png') }}" alt=""></div>
-                            <div class="ps-block__content">
-                                <p>ยูเอชเอ็ม(UHM)</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 ">
-                        <div class="ps-block--category" data-mh="categories">
-                            <div class="ps-block__thumbnail"><img src="{{ url('assets/img/logo_banner/Logo_43411_571274513_fullsize.jpg') }}" alt=""></div>
-                            <div class="ps-block__content">
-                                <p>Thai PPR</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 ">
-                        <div class="ps-block--category" data-mh="categories">
-                            <div class="ps-block__thumbnail"><img src="{{ url('assets/img/logo_banner/unnamed.jpg') }}" alt=""></div>
-                            <div class="ps-block__content">
-                                <p>POLOPLAST GmbH & Co KG</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 ">
-                        <div class="ps-block--category" data-mh="categories">
-                            <div class="ps-block__thumbnail"><img src="{{ url('assets/img/logo_banner/3e1a3acc-9f1a-be2b-84c9-599cf4558f06.jpg') }}" alt=""></div>
-                            <div class="ps-block__content">
-                                <p>NANO ELECTRIC PRODUCT</p>
-                            </div>
-                        </div>
-                    </div>
 
+                @if(isset($ban))
+                @foreach($ban as $u)
                     <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 ">
+                        <a href="{{ url('category?id=0&brand='.$u->id) }}">
                         <div class="ps-block--category" data-mh="categories">
-                            <div class="ps-block__thumbnail"><img src="{{ url('assets/img/logo_banner/o_1ds9ci9lu13hug5p182e28o16t47.jpg') }}" alt=""></div>
+                            <div class="ps-block__thumbnail"><img src="{{ url('/img/brand/'.$u->image_brand) }}" alt="{{ $u->title_brand }}" class="img-responsive"></div>
                             <div class="ps-block__content">
-                                <p>คิตส์ (KITZ)</p>
+                                <p>{{ $u->title_brand }}</p>
                             </div>
                         </div>
+                        </a>
                     </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 ">
-                        <div class="ps-block--category" data-mh="categories">
-                            <div class="ps-block__thumbnail"><img src="{{ url('assets/img/logo_banner/Kistler.png') }}" alt=""></div>
-                            <div class="ps-block__content">
-                                <p>Kistler</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 ">
-                        <div class="ps-block--category" data-mh="categories">
-                            <div class="ps-block__thumbnail"><img src="{{ url('assets/img/logo_banner/e81ilp.png') }}" alt=""></div>
-                            <div class="ps-block__content">
-                                <p>พานาโซนิค</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 ">
-                        <div class="ps-block--category" data-mh="categories">
-                            <div class="ps-block__thumbnail"><img src="{{ url('assets/img/logo_banner/CDP_Logo_Arrow.png') }}" alt=""></div>
-                            <div class="ps-block__content">
-                                <p>แอร์โรว์</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 ">
-                        <div class="ps-block--category" data-mh="categories">
-                            <div class="ps-block__thumbnail"><img src="{{ url('assets/img/logo_banner/haco.jpg') }}" alt=""></div>
-                            <div class="ps-block__content">
-                                <p>ฮาโก้ (HACO)</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-6 ">
-                        <div class="ps-block--category" data-mh="categories">
-                            <div class="ps-block__thumbnail"><img src="{{ url('assets/img/logo_banner/962abb48f0cb92c7bd1f766c4349c36b.jpg') }}" alt=""></div>
-                            <div class="ps-block__content">
-                                <p>ยาซากิ (Yazaki)</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+                @endif
 
                 </div>
                 
@@ -201,97 +154,71 @@ homepage
 
         <div class="ps-promotions">
             <div class="container">
-                <a class="ps-collection" href="shop-default.html">
-                    <img src="{{ url('assets/img/catalogPageBanner.jpg') }}" alt="">
+                <a class="ps-collection" href="{{ setting()->url_img2 }}">
+                    <img src="{{ url('img/setting/'.setting()->image_2) }}" alt="">
                 </a>
+               
             </div>
         </div>
         <div class="ps-product-list ps-clothings">
             <div class="container">
                 <div class="ps-section__header">
-                    <h3>สินค้ายอดฮิตในหมวด งานระบบไฟฟ้า</h3>
+                    <h3>กลุ่มสินค้าแนะนำ</h3>
                     <ul class="ps-section__links">
-                        <li><a href="#">ดูสินค้าทั้งหมด</a></li>
+                        <li><a href="{{ url('recommend') }}">ดูสินค้าทั้งหมด</a></li>
                     </ul>
                 </div>
                 <div class="ps-section__content">
                     <div class="ps-carousel--nav owl-slider" data-owl-auto="false" data-owl-loop="false" data-owl-speed="10000" data-owl-gap="30" data-owl-nav="true" data-owl-dots="true" data-owl-item="5" data-owl-item-xs="2" data-owl-item-sm="2" data-owl-item-md="3" data-owl-item-lg="4" data-owl-item-xl="5" data-owl-duration="1000" data-owl-mousedrag="on">
                         
-                        <div class="ps-product">
-                            <div class="ps-product__thumbnail"><a href="#"><img src="{{ url('assets/img/pro_img/000937_042007215942_20201113113739.jpg') }}" alt=""></a>
-                                <div class="ps-product__badge">-16%</div>
-                            </div>
-                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Go Pro</a>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">ERA ท่อน้ำอุ่น PPR PN12.5 ขนาด 2 สีเขียว</a>
-                                    <p class="ps-product__price sale">$567.99 <del>$670.00 </del></p>
-                                </div>
-                                <div class="ps-product__content hover"><a class="ps-product__title" href="#">ERA ท่อน้ำอุ่น PPR PN12.5 ขนาด 2 สีเขียว</a>
-                                    <p class="ps-product__price sale">$567.99 <del>$670.00 </del></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ps-product">
-                            <div class="ps-product__thumbnail"><a href="#"><img src="{{ url('assets/img/pro_img/1911020150422-5ee994d00189320200617030358580707.jpg') }}" alt=""></a>
-                            </div>
-                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Office</a>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">VAVO หางปลาไหล  2 1/2นิ้ว</a>
-                                    <p class="ps-product__price">$101.99</p>
-                                </div>
-                                <div class="ps-product__content hover"><a class="ps-product__title" href="#">VAVO หางปลาไหล  2 1/2นิ้ว</a>
-                                    <p class="ps-product__price">$101.99</p>
-                                </div>
-                            </div>
-                        </div>
+                        @if(isset($recom))
+                        @foreach($recom as $u)
 
+                        @if($u->discount !== 0)
                         <div class="ps-product">
-                            <div class="ps-product__thumbnail"><a href="#"><img src="{{ url('assets/img/pro_img/gbh_GBH_3622006750047_20200612130108.jpg') }}" alt=""></a>
-                            </div>
-                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Office</a>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">LUXUS ท่อประปาเหล็ก 1/2 นิ้ว x30 ซม.</a>
-                                    <p class="ps-product__price">$101.99</p>
+                            <div class="ps-product__thumbnail">
+                                <a  class="get_download" data-id="{{ $u->id_p }}">
+                                    <img src="{{ url('img/product/'.$u->image) }}" alt="{{ $u->name }}">
+                                </a>
+                                <div class="ps-product__badge hot">
+                                    <img src="{{ url('img/brand/'.$u->image_brand) }}" alt="{{ $u->title_brand }}">
                                 </div>
-                                <div class="ps-product__content hover"><a class="ps-product__title" href="#">LUXUS ท่อประปาเหล็ก 1/2 นิ้ว x30 ซม.</a>
-                                    <p class="ps-product__price">$101.99</p>
+                                <?php 
+                                $discount_value= ($u->price / 100) *$u->discount;
+                                $final_price = $u->price - $discount_value;
+                                ?>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor get_download" data-id="{{ $u->id_p }}">{{ $u->name_cat }}</a>
+                                <div class="ps-product__content"><a class="ps-product__title get_download" data-id="{{ $u->id_p }}">{{ $u->name }}</a>
+                                    <p class="ps-product__price sale">฿{{ number_format((float)$final_price, 2, '.', '') }} <del>฿{{ number_format((float)$u->price, 2, '.', '') }} </del></p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title get_download" data-id="{{ $u->id_p }}">{{ $u->name }}</a>
+                                    <p class="ps-product__price sale">฿{{ number_format((float)$final_price, 2, '.', '') }} <del>฿{{ number_format((float)$u->price, 2, '.', '') }} </del></p>
                                 </div>
                             </div>
                         </div>
+                        @else
                         <div class="ps-product">
-                            <div class="ps-product__thumbnail"><a href="#"><img src="{{ url('assets/img/pro_img/out0349080101_3722004360757_20191119213116.jpg') }}" alt=""></a>
-                            </div>
-                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Office</a>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">VAVO ท่อประปาสำเร็จ 3/4 นิ้ว x30 ซม.</a>
-                                    <p class="ps-product__price">$101.99</p>
+                            <div class="ps-product__thumbnail"><a class="get_download" data-id="{{ $u->id_p }}"><img src="{{ url('img/product/'.$u->image) }}" alt="{{ $u->name }}"></a>
+                            <div class="ps-product__badge hot">
+                                    <img src="{{ url('img/brand/'.$u->image_brand) }}" alt="{{ $u->title_brand }}">
                                 </div>
-                                <div class="ps-product__content hover"><a class="ps-product__title" href="#">VAVO ท่อประปาสำเร็จ 3/4 นิ้ว x30 ซม.</a>
-                                    <p class="ps-product__price">$101.99</p>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor get_download" data-id="{{ $u->id_p }}">{{ $u->name_cat }}</a>
+                                <div class="ps-product__content"><a class="ps-product__title get_download" data-id="{{ $u->id_p }}">{{ $u->name }}</a>
+                                    <p class="ps-product__price">฿{{ number_format((float)$u->price, 2, '.', '') }}</p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title get_download" href="#">{{ $u->name }}</a>
+                                    <p class="ps-product__price">฿{{ number_format((float)$u->price, 2, '.', '') }}</p>
                                 </div>
                             </div>
                         </div>
+                        @endif
 
-                        <div class="ps-product">
-                            <div class="ps-product__thumbnail"><a href="#"><img src="{{ url('assets/img/pro_img/VEN-193407_8859162812035_20201004021252.jpg') }}" alt=""></a>
-                            </div>
-                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Office</a>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">LUXUS ท่อประปาเหล็ก 1/2 นิ้ว x30 ซม.</a>
-                                    <p class="ps-product__price">$101.99</p>
-                                </div>
-                                <div class="ps-product__content hover"><a class="ps-product__title" href="#">LUXUS ท่อประปาเหล็ก 1/2 นิ้ว x30 ซม.</a>
-                                    <p class="ps-product__price">$101.99</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ps-product">
-                            <div class="ps-product__thumbnail"><a href="#"><img src="{{ url('assets/img/pro_img/gbh_VEN-BOW01_3722004360511_20171012153439.jpg') }}" alt=""></a>
-                            </div>
-                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Office</a>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">VAVO ท่อประปาสำเร็จ 3/4 นิ้ว x30 ซม.</a>
-                                    <p class="ps-product__price">$101.99</p>
-                                </div>
-                                <div class="ps-product__content hover"><a class="ps-product__title" href="#">VAVO ท่อประปาสำเร็จ 3/4 นิ้ว x30 ซม.</a>
-                                    <p class="ps-product__price">$101.99</p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+                        @endif
+                        
+                        
 
 
                     </div>
@@ -303,93 +230,57 @@ homepage
         <div class="ps-product-list">
             <div class="container">
                 <div class="ps-section__header">
-                    <h3>กลุ่มสินค้าแนะนำ</h3>
+                    <h3>กลุ่มสินค้ามาใหม่</h3>
                     <ul class="ps-section__links">
-                        <li><a href="#">ดูสินค้าทั้งหมด</a></li>
+                        <li><a href="{{ url('new_product') }}">ดูสินค้าทั้งหมด</a></li>
                     </ul>
                 </div>
                 <div class="ps-section__content">
                     <div class="ps-carousel--nav owl-slider" data-owl-auto="false" data-owl-loop="false" data-owl-speed="10000" data-owl-gap="30" data-owl-nav="true" data-owl-dots="true" data-owl-item="5" data-owl-item-xs="2" data-owl-item-sm="2" data-owl-item-md="3" data-owl-item-lg="4" data-owl-item-xl="5" data-owl-duration="1000" data-owl-mousedrag="on">
                         
-                    <div class="ps-product">
-                            <div class="ps-product__thumbnail"><a href="#"><img src="{{ url('assets/img/pro_img/000937_042007215942_20201113113739.jpg') }}" alt=""></a>
-                                <div class="ps-product__badge">-16%</div>
-                            </div>
-                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Go Pro</a>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">ERA ท่อน้ำอุ่น PPR PN12.5 ขนาด 2 สีเขียว</a>
-                                    <p class="ps-product__price sale">$567.99 <del>$670.00 </del></p>
-                                </div>
-                                <div class="ps-product__content hover"><a class="ps-product__title" href="#">ERA ท่อน้ำอุ่น PPR PN12.5 ขนาด 2 สีเขียว</a>
-                                    <p class="ps-product__price sale">$567.99 <del>$670.00 </del></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ps-product">
-                            <div class="ps-product__thumbnail"><a href="#"><img src="{{ url('assets/img/pro_img/1911020150422-5ee994d00189320200617030358580707.jpg') }}" alt=""></a>
-                            </div>
-                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Office</a>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">VAVO หางปลาไหล  2 1/2นิ้ว</a>
-                                    <p class="ps-product__price">$101.99</p>
-                                </div>
-                                <div class="ps-product__content hover"><a class="ps-product__title" href="#">VAVO หางปลาไหล  2 1/2นิ้ว</a>
-                                    <p class="ps-product__price">$101.99</p>
-                                </div>
-                            </div>
-                        </div>
+                    @if(isset($hit))
+                        @foreach($hit as $u)
 
+                        @if($u->discount !== 0)
                         <div class="ps-product">
-                            <div class="ps-product__thumbnail"><a href="#"><img src="{{ url('assets/img/pro_img/gbh_GBH_3622006750047_20200612130108.jpg') }}" alt=""></a>
-                            </div>
-                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Office</a>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">LUXUS ท่อประปาเหล็ก 1/2 นิ้ว x30 ซม.</a>
-                                    <p class="ps-product__price">$101.99</p>
+                            <div class="ps-product__thumbnail"><a class="get_download" data-id="{{ $u->id_p }}"><img src="{{ url('img/product/'.$u->image) }}" alt="{{ $u->name }}"></a>
+                                <div class="ps-product__badge hot">
+                                    <img src="{{ url('img/brand/'.$u->image_brand) }}" alt="{{ $u->title_brand }}">
                                 </div>
-                                <div class="ps-product__content hover"><a class="ps-product__title" href="#">LUXUS ท่อประปาเหล็ก 1/2 นิ้ว x30 ซม.</a>
-                                    <p class="ps-product__price">$101.99</p>
+                                <?php 
+                                $discount_value= ($u->price / 100) *$u->discount;
+                                $final_price = $u->price - $discount_value;
+                                ?>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor get_download" data-id="{{ $u->id_p }}">{{ $u->name_cat }}</a>
+                                <div class="ps-product__content"><a class="ps-product__title get_download" data-id="{{ $u->id_p }}">{{ $u->name }}</a>
+                                    <p class="ps-product__price sale">฿{{ number_format((float)$final_price, 2, '.', '') }} <del>฿{{ number_format((float)$u->price, 2, '.', '') }} </del></p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title get_download" data-id="{{ $u->id_p }}">{{ $u->name }}</a>
+                                    <p class="ps-product__price sale">฿{{ number_format((float)$final_price, 2, '.', '') }} <del>฿{{ number_format((float)$u->price, 2, '.', '') }} </del></p>
                                 </div>
                             </div>
                         </div>
+                        @else
                         <div class="ps-product">
-                            <div class="ps-product__thumbnail"><a href="#"><img src="{{ url('assets/img/pro_img/out0349080101_3722004360757_20191119213116.jpg') }}" alt=""></a>
-                            </div>
-                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Office</a>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">VAVO ท่อประปาสำเร็จ 3/4 นิ้ว x30 ซม.</a>
-                                    <p class="ps-product__price">$101.99</p>
+                            <div class="ps-product__thumbnail"><a class="get_download" data-id="{{ $u->id_p }}"><img src="{{ url('img/product/'.$u->image) }}" alt="{{ $u->name }}"></a>
+                            <div class="ps-product__badge hot">
+                                    <img src="{{ url('img/brand/'.$u->image_brand) }}" alt="{{ $u->title_brand }}">
                                 </div>
-                                <div class="ps-product__content hover"><a class="ps-product__title" href="#">VAVO ท่อประปาสำเร็จ 3/4 นิ้ว x30 ซม.</a>
-                                    <p class="ps-product__price">$101.99</p>
+                            </div>
+                            <div class="ps-product__container"><a class="ps-product__vendor get_download" data-id="{{ $u->id_p }}">{{ $u->name_cat }}</a>
+                                <div class="ps-product__content"><a class="ps-product__title get_download" data-id="{{ $u->id_p }}">{{ $u->name }}</a>
+                                    <p class="ps-product__price">฿{{ number_format((float)$u->price, 2, '.', '') }}</p>
+                                </div>
+                                <div class="ps-product__content hover"><a class="ps-product__title get_download" data-id="{{ $u->id_p }}">{{ $u->name }}</a>
+                                    <p class="ps-product__price">฿{{ number_format((float)$u->price, 2, '.', '') }}</p>
                                 </div>
                             </div>
                         </div>
+                        @endif
 
-                        <div class="ps-product">
-                            <div class="ps-product__thumbnail"><a href="#"><img src="{{ url('assets/img/pro_img/VEN-193407_8859162812035_20201004021252.jpg') }}" alt=""></a>
-                            </div>
-                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Office</a>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">LUXUS ท่อประปาเหล็ก 1/2 นิ้ว x30 ซม.</a>
-                                    <p class="ps-product__price">$101.99</p>
-                                </div>
-                                <div class="ps-product__content hover"><a class="ps-product__title" href="#">LUXUS ท่อประปาเหล็ก 1/2 นิ้ว x30 ซม.</a>
-                                    <p class="ps-product__price">$101.99</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ps-product">
-                            <div class="ps-product__thumbnail"><a href="#"><img src="{{ url('assets/img/pro_img/gbh_VEN-BOW01_3722004360511_20171012153439.jpg') }}" alt=""></a>
-                            </div>
-                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">Global Office</a>
-                                <div class="ps-product__content"><a class="ps-product__title" href="#">VAVO ท่อประปาสำเร็จ 3/4 นิ้ว x30 ซม.</a>
-                                    <p class="ps-product__price">$101.99</p>
-                                </div>
-                                <div class="ps-product__content hover"><a class="ps-product__title" href="#">VAVO ท่อประปาสำเร็จ 3/4 นิ้ว x30 ซม.</a>
-                                    <p class="ps-product__price">$101.99</p>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        
+                        @endforeach
+                        @endif
                         
                         
                     </div>

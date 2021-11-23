@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('title')
-ติดต่อเรา
+วิธีการชำระเงิน
 @stop
 
 @section('stylesheet')
@@ -23,7 +23,7 @@
             <div class="container">
                 <ul class="breadcrumb">
                     <li><a href="{{ url('/') }}">หน้าหลัก</a></li>
-                    <li>ขอใบเสนอราคา</li>
+                    <li>วิธีการชำระเงิน</li>
                 </ul>
             </div>
         </div>
@@ -53,82 +53,27 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+
+                                @if(isset($bank))
+                                @foreach($bank as $u)
                                     <tr>
-                                    <td>
-                                        <img src="https://www.masterphotonetwork.com/master/assets/image/bank/icon-bankbbl.png" height="35">
-                                    </td>
-                                    <td class="p_top">
-                                        บริษัท มาสเตอร์ โฟโต้ เน็ตเวิร์ค จำกัด
-                                    </td>
-                                    <td class="p_top">
-                                        129-5-51893-8 (ออมทรัพย์)
-                                    </td>
-                                    <td class="p_top">
-                                        ลาดพร้าว
-                                    </td>
+                                        <td>
+                                            <img src="{{ url('img/bank/'.$u->image) }}" height="35">
+                                        </td>
+                                        <td class="p_top">
+                                            {{ $u->bank_name }}
+                                        </td>
+                                        <td class="p_top">
+                                            {{ $u->ac_number }}
+                                        </td>
+                                        <td class="p_top">
+                                            {{ $u->branch }}
+                                        </td>
                                     </tr>
+                                    @endforeach
+                                @endif
 
-                                    <tr>
-                                    <td>
-                                        <img src="https://www.masterphotonetwork.com/master/assets/image/bank/icon-bankscb.png" height="35">
-                                    </td>
-                                    <td class="p_top">
-                                        บริษัท มาสเตอร์ โฟโต้ เน็ตเวิร์ค จำกัด
-                                    </td>
-                                    <td class="p_top">
-                                        041-270703-6 (ออมทรัพย์)
-                                    </td>
-                                    <td class="p_top">
-                                        บางเขน
-                                    </td>
-                                    </tr>
-
-                                    <tr>
-                                    <td>
-                                        <img src="https://www.masterphotonetwork.com/master/assets/image/bank/icon-bankktc.png" height="35">
-                                    </td>
-                                    <td class="p_top">
-                                        บริษัท มาสเตอร์ โฟโต้ เน็ตเวิร์ค จำกัด
-                                    </td>
-                                    <td class="p_top">
-                                        477-0-10789-7 (ออมทรัพย์)
-                                    </td>
-                                    <td class="p_top">
-                                        ยูเนี่ยนมอลล์
-                                    </td>
-                                    </tr>
-
-                                    <tr>
-                                    <td>
-                                        <img src="https://www.masterphotonetwork.com/master/assets/image/bank/icon-bankkrugsri.png" height="35">
-                                    </td>
-                                    <td class="p_top">
-                                        บริษัท มาสเตอร์ โฟโต้ เน็ตเวิร์ค จำกัด
-                                    </td>
-                                    <td class="p_top">
-                                        106-1-35383-5 (ออมทรัพย์)
-                                    </td>
-                                    <td class="p_top">
-                                        ยูเนี่ยนมอลล์ ลาดพร้าว
-                                    </td>
-                                    </tr>
-
-
-                                    <tr>
-                                    <td>
-                                        <img src="https://www.masterphotonetwork.com/master/assets/image/bank/icon-bankkbank.png" height="35">
-                                    </td>
-                                    <td class="p_top">
-                                        บริษัท มาสเตอร์ โฟโต้ เน็ตเวิร์ค จำกัด
-                                    </td>
-                                    <td class="p_top">
-                                        752-229-3029 (ออมทรัพย์)
-                                    </td>
-                                    <td class="p_top">
-                                        ลาดพร้าว 10
-                                    </td>
-                                    </tr>
-
+                    
                                 </tbody>
                                 </table>
                                 </div>

@@ -1,6 +1,6 @@
 <div class="ps-newsletter">
         <div class="container">
-            <form class="ps-form--newsletter" action="do_action" method="post">
+            <form class="ps-form--newsletter" name="sub" id="add_sub_form">
                 <div class="row">
                     <div class="col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12 ">
                         <div class="ps-form__left">
@@ -11,8 +11,8 @@
                     <div class="col-xl-7 col-lg-12 col-md-12 col-sm-12 col-12 ">
                         <div class="ps-form__right">
                             <div class="form-group--nest">
-                                <input class="form-control" type="email" placeholder="Email address">
-                                <button class="ps-btn">Subscribe</button>
+                                <input class="form-control" name="email" id="email_sub" type="email" placeholder="พิมพ์อีเมลของคุณที่นี่">
+                                <a class="ps-btn" id="add_sub">Subscribe</a>
                             </div>
                         </div>
                     </div>
@@ -27,17 +27,17 @@
                 <aside class="widget widget_footer widget_contact-us">
                     <h4 class="widget-title">ติดต่อเรา</h4>
                     <div class="widget_content">
-                        <p>เปิดบริการทุกวัน 08:30 - 19:00 น.</p>
-                        <h3>1800 97 97 69</h3>
-                        <p>502 New Design Str, Melbourne, Australia <br><a href="mailto:contact@martfury.co">contact@martfury.co</a></p>
+                        <p>{{ setting()->company_time }}</p>
+                        <h3>{{ setting()->phone }}</h3>
+                        <p>{{ setting()->address }} <br><a href="mailto:{{ setting()->email }}">{{ setting()->email }}</a></p>
                         
                         <div>
-                            <a href="#"><img src="{{ url('assets/img/social/footer-facebook.png') }}" class="social_icin_foot" alt=""></a>
-                            <a href="#"><img src="{{ url('assets/img/social/footer-line-icon.png') }}" class="social_icin_foot" alt=""></a>
-                            <a href="#"><img src="{{ url('assets/img/social/footer-inastargram.png') }}" class="social_icin_foot" alt=""></a>
-                            <a href="#"><img src="{{ url('assets/img/social/footer-youtube.png') }}" class="social_icin_foot" alt=""></a>
-                            <a href="#"><img src="{{ url('assets/img/social/footer-tiktok.png') }}" class="social_icin_foot" alt=""></a>
-                            <a href="#"><img src="{{ url('assets/img/social/footer-twitter.png') }}" class="social_icin_foot" alt=""></a>
+                            <a href="{{ setting()->facebook_url }}" target="_blank"><img src="{{ url('assets/img/social/footer-facebook.png') }}" class="social_icin_foot" alt=""></a>
+                            <a href="{{ setting()->line_oa_url }}" target="_blank"><img src="{{ url('assets/img/social/footer-line-icon.png') }}" class="social_icin_foot" alt=""></a>
+                            <a href="{{ setting()->inastargram }}" target="_blank"><img src="{{ url('assets/img/social/footer-inastargram.png') }}" class="social_icin_foot" alt=""></a>
+                            <a href="{{ setting()->youtube	 }}" target="_blank"><img src="{{ url('assets/img/social/footer-youtube.png') }}" class="social_icin_foot" alt=""></a>
+                            <a href="{{ setting()->tiktok }}" target="_blank"><img src="{{ url('assets/img/social/footer-tiktok.png') }}" class="social_icin_foot" alt=""></a>
+                            <a href="{{ setting()->twitter }}" target="_blank"><img src="{{ url('assets/img/social/footer-twitter.png') }}" class="social_icin_foot" alt=""></a>
                         </div>
                         
                     </div>
@@ -73,20 +73,13 @@
             
             
             <div class="ps-footer__copyright">
-                <p>© 2018 Martfury. All Rights Reserved</p>
-                <p><span>We Using Safe Payment For:</span>
-                    <a href="#">
-                        <img src="{{ url('assets/img/payment-method/1.jpg') }}" alt="">
-                    </a>
-                    <a href="#">
-                        <img src="{{ url('assets/img/payment-method/2.jpg') }}" alt="">
-                    </a>
+                <p>© 2018 {{ setting()->nme_website }}. All Rights Reserved</p>
+                <p><span>เราใช้การชำระเงินที่ปลอดภัย : </span>
+                   
                     <a href="#">
                         <img src="{{ url('assets/img/payment-method/3.jpg') }}" alt="">
                     </a>
-                    <a href="#">
-                        <img src="{{ url('assets/img/payment-method/4.jpg') }}" alt="">
-                    </a>
+                    
                     <a href="#">
                         <img src="{{ url('assets/img/payment-method/5.jpg') }}" alt="">
                     </a>

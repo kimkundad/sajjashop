@@ -79,20 +79,23 @@
                         <div class="menu__toggle"><i class="icon-menu"></i><span> แคตตาล็อคสินค้างานระบบ</span></div>
                         <div class="menu__content">
                             <ul class="menu--dropdown">
-                                <li class="current-menu-item "><a href="#"><i class="icon-star"></i> Hot Promotions</a>
-                                </li>
+                            @if(categories() !== null)
+                                @foreach(categories() as $u)
+                                <li class="current-menu-item "><a href="{{ url('/get_category/?id='.$u->id) }}"> {{ $u->name_cat }} </a></li>
+                                @endforeach
+                                @endif
                             </ul>
                         </div>
-                    </div><a class="ps-logo" href="{{  url('/') }}"><img src="{{ url('assets/img/logo-sajja-all-size_v2.png') }}" alt=""></a>
+                    </div><a class="ps-logo" href="{{  url('/') }}"><img src="{{ url('assets/img/logo-sajja-all-size_v2.png') }}" alt="{{ setting()->nme_website }}"></a>
                 </div>
                 <div class="header__center">
-                    <form class="ps-form--quick-search" action="{{  url('/') }}" method="get">
+                    <form class="ps-form--quick-search" action="{{  url('/search') }}" method="get">
                         <div class="form-group--icon">
                             <select class="form-control">
                                 
                             </select>
                         </div>
-                        <input class="form-control" type="text" placeholder="ฉันกำลังค้นหาสินค้า...">
+                        <input class="form-control" name="search" type="text" placeholder="ฉันกำลังค้นหาสินค้า...">
                         <button>ค้นหา</button>
                     </form>
                 </div>
@@ -101,14 +104,14 @@
                         <div class="ps-block--user-header">
                             <div class="ps-block__left"><i class="icon-bubbles"></i></div>
                             <div class="ps-block__right">
-                                <a href="{{ url('login') }}" style="padding-top: 6px">095-846-7417</a>
+                                <a href="{{ url('login') }}" style="padding-top: 6px">{{ setting()->phone }}</a>
                             </div>
                         </div>
                     
                         <div class="ps-block--user-header">
                             <div class="ps-block__left"><i class="icon-user"></i></div>
                             <div class="ps-block__right">
-                                <a href="{{ url('login') }}" style="padding-top: 5px">Login</a>
+                                <a href="{{ url('login') }}" style="padding-top: 5px">เข้าสู่ระบบ</a>
                             </div>
                         </div>
                     </div>
@@ -122,18 +125,11 @@
                         <div class="menu__toggle"><i class="icon-menu" style="color: #fff;"></i><span> แคตตาล็อคสินค้างานระบบ</span></div>
                         <div class="menu__content">
                             <ul class="menu--dropdown">
-                                <li class="current-menu-item "><a href="#"> ปลั๊กและสวิตช์ไฟฟ้า </a></li>
-                                <li class="current-menu-item "><a href="#"> ไฟฉายและไฟฉุกเฉิน </a></li>
-                                <li class="current-menu-item "><a href="#"> เบรกเกอร์และตู้ไฟ </a></li>
-
-                                <li class="current-menu-item "><a href="#"> กริ่ง </a></li>
-                                <li class="current-menu-item "><a href="#"> สายไฟ </a></li>
-                                <li class="current-menu-item "><a href="#"> ท่อร้อยสายไฟและอุปกรณ์ </a></li>
-                                <li class="current-menu-item "><a href="#"> อุปกรณ์เดินสายไฟ </a></li>
-                                <li class="current-menu-item "><a href="#"> ระบบโซล่าเซลล์ </a></li>
-                                <li class="current-menu-item "><a href="#"> รางปลั๊กและอแดปเตอร์ </a></li>
-                                <li class="current-menu-item "><a href="#"> อุปกรณ์ IoT </a></li>
-                                
+                                @if(categories() !== null)
+                                @foreach(categories() as $u)
+                                <li class="current-menu-item "><a href="{{ url('/get_category/?id='.$u->id) }}"> {{ $u->name_cat }} </a></li>
+                                @endforeach
+                                @endif
                             </ul>
                         </div>
                     </div>
@@ -170,26 +166,7 @@
                 <p>Welcome to Martfury Online Shopping Store !</p>
             </div>
             <div class="header__right">
-                <ul class="navigation__extra">
-                    <li><a href="#">Sell on Martfury</a></li>
-                    <li><a href="#">Tract your order</a></li>
-                    <li>
-                        <div class="ps-dropdown"><a href="#">US Dollar</a>
-                            <ul class="ps-dropdown-menu">
-                                <li><a href="#">Us Dollar</a></li>
-                                <li><a href="#">Euro</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="ps-dropdown language"><a href="#"><img src="img/flag/en.png" alt="">English</a>
-                            <ul class="ps-dropdown-menu">
-                                <li><a href="#"><img src="img/flag/germany.png" alt=""> Germany</a></li>
-                                <li><a href="#"><img src="img/flag/fr.png" alt=""> France</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
+                
             </div>
         </div>
         <div class="navigation--mobile">
@@ -199,9 +176,9 @@
             
         </div>
         <div class="ps-search--mobile">
-            <form class="ps-form--search-mobile" action="{{  url('/') }}" method="get">
+            <form class="ps-form--search-mobile" action="{{ url('/search') }}" method="get">
                 <div class="form-group--nest">
-                    <input class="form-control" type="text" placeholder="ฉันกำลังค้นหาสินค้า...">
+                    <input class="form-control" type="text" placeholder="ฉันกำลังค้นหาสินค้า..">
                     <button><i class="icon-magnifier"></i></button>
                 </div>
             </form>
@@ -237,17 +214,11 @@
         </div>
         <div class="ps-panel__content">
             <ul class="menu--mobile">
-                                <li class="current-menu-item "><a href="#"> ปลั๊กและสวิตช์ไฟฟ้า </a></li>
-                                <li class="current-menu-item "><a href="#"> ไฟฉายและไฟฉุกเฉิน </a></li>
-                                <li class="current-menu-item "><a href="#"> เบรกเกอร์และตู้ไฟ </a></li>
-
-                                <li class="current-menu-item "><a href="#"> กริ่ง </a></li>
-                                <li class="current-menu-item "><a href="#"> สายไฟ </a></li>
-                                <li class="current-menu-item "><a href="#"> ท่อร้อยสายไฟและอุปกรณ์ </a></li>
-                                <li class="current-menu-item "><a href="#"> อุปกรณ์เดินสายไฟ </a></li>
-                                <li class="current-menu-item "><a href="#"> ระบบโซล่าเซลล์ </a></li>
-                                <li class="current-menu-item "><a href="#"> รางปลั๊กและอแดปเตอร์ </a></li>
-                                <li class="current-menu-item "><a href="#"> อุปกรณ์ IoT </a></li>
+                                @if(categories() !== null)
+                                @foreach(categories() as $u)
+                                <li class="current-menu-item "><a href="{{ url('/get_category/?id='.$u->id) }}"> {{ $u->name_cat }} </a></li>
+                                @endforeach
+                                @endif
             </ul>
         </div>
     </div>
@@ -269,7 +240,7 @@
     </div>
     <div class="ps-panel--sidebar" id="search-sidebar">
         <div class="ps-panel__header">
-            <form class="ps-form--search-mobile" action="{{  url('/') }}" method="get">
+            <form class="ps-form--search-mobile" action="{{  url('/search') }}" method="get">
                 <div class="form-group--nest">
                     <input class="form-control" type="text" placeholder="ฉันกำลังค้นหาสินค้า...">
                     <button><i class="icon-magnifier"></i></button>
