@@ -225,7 +225,12 @@ window.gaTitle = 'หน้าแรก';
         <div class="form-group">
           <br>
           <label for="exampleInputUsername1">url แบนเนอร์หน้าข่าวสาร <span class="text-danger">*</span></label>
+          @if(isset($objs->url_img4))
           <input type="text" class="form-control" id="exampleInputUsername1" name="url_img4" value="{{ $objs->url_img4 }}">
+          @else
+          <input type="text" class="form-control" id="exampleInputUsername1" name="url_img4" >
+          @endif
+         
         </div>
 
         
