@@ -158,7 +158,11 @@ window.gaTitle = 'หน้าแรก';
         <div class="form-group">
           <br>
           <label for="exampleInputUsername1">url  banner หน้าแรกมุมบนขวา <span class="text-danger">*</span></label>
+          @if(isset($objs->url_img1))
           <input type="text" class="form-control" id="exampleInputUsername1" name="url_img1" value="{{ $objs->url_img1 }}">
+          @else
+          <input type="text" class="form-control" id="exampleInputUsername1" name="url_img1" >
+          @endif
         </div>
 
         <div class="form-group">
@@ -178,7 +182,12 @@ window.gaTitle = 'หน้าแรก';
         <div class="form-group">
           <br>
           <label for="exampleInputUsername1">url banner หน้ากลางหน้าแรก <span class="text-danger">*</span></label>
+          @if(isset($objs->url_img2))
           <input type="text" class="form-control" id="exampleInputUsername1" name="url_img2" value="{{ $objs->url_img2 }}">
+          @else
+          <input type="text" class="form-control" id="exampleInputUsername1" name="url_img2" >
+          @endif
+        
         </div>
 
 
