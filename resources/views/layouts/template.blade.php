@@ -9,6 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="author" content="Webmaster">
     <meta name="description" content="{{ setting()->facebook_detail }}">
+    <link rel="shortcut icon" href="{{ url('assets/img/favicon.png') }}" />
     <title>@yield('title')</title>
 
     @if(isset(setting()->facebook_image))
@@ -18,6 +19,8 @@
     <meta property="og:image" content="{{ url('img/setting/'.setting()->facebook_image) }}">
     <meta property="og:description" content="{{ setting()->facebook_detail }}">
     @endif
+
+    favicon.png
 
     @include('layouts.inc-style')
 
