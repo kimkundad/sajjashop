@@ -38,6 +38,10 @@ class CreateSettingsTable extends Migration
             $table->text('image_2')->nullable();
             $table->text('image_3')->nullable();
             $table->text('image_4')->nullable();
+            $table->text('url_img1')->nullable();
+            $table->text('url_img2')->nullable();
+            $table->text('url_img3')->nullable();
+            $table->text('url_img4')->nullable();
             $table->timestamps();
         });
     }
