@@ -111,7 +111,11 @@
                         <div class="ps-block--user-header">
                             <div class="ps-block__left"><i class="icon-user"></i></div>
                             <div class="ps-block__right">
+                                 @if (Auth::guest())
                                 <a href="{{ url('login') }}" style="padding-top: 5px">เข้าสู่ระบบ</a>
+                                @else
+                                <a href="{{ url('admin/dashboard') }}" style="padding-top: 5px">Administrator</a>
+                                @endif
                             </div>
                         </div>
                     </div>
