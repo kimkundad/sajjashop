@@ -32,7 +32,7 @@
                                         @if($u->discount !== 0)
                                         <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6 col-6 ">
                                         <div class="ps-product">
-                                            <div class="ps-product__thumbnail"><a href="#"><img src="{{ url('img/product/'.$u->image) }}" alt="{{ $u->name }}"></a>
+                                            <div class="ps-product__thumbnail"><a class="get_download" data-id="{{ $u->id_p }}"><img src="{{ url('img/product/'.$u->image) }}" alt="{{ $u->name }}"></a>
                                                 <div class="ps-product__badge hot">
                                                     <img src="{{ url('img/brand/'.$u->image_brand) }}" alt="{{ $u->title_brand }}">
                                                 </div>
@@ -41,11 +41,11 @@
                                                 $final_price = $u->price - $discount_value;
                                                 ?>
                                             </div>
-                                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">{{ $u->name_cat }}</a>
-                                                <div class="ps-product__content"><a class="ps-product__title" href="#">{{ $u->name }}</a>
+                                            <div class="ps-product__container"><a class="ps-product__vendor" data-id="{{ $u->id_p }}">{{ $u->name_cat }}</a>
+                                                <div class="ps-product__content"><a class="ps-product__title" data-id="{{ $u->id_p }}">{{ $u->name }}</a>
                                                     <p class="ps-product__price sale">฿{{ number_format((float)$final_price, 2, '.', '') }} <del>฿{{ number_format((float)$u->price, 2, '.', '') }} </del></p>
                                                 </div>
-                                                <div class="ps-product__content hover"><a class="ps-product__title" href="#">{{ $u->name }}</a>
+                                                <div class="ps-product__content hover"><a class="ps-product__title" data-id="{{ $u->id_p }}">{{ $u->name }}</a>
                                                     <p class="ps-product__price sale">฿{{ number_format((float)$final_price, 2, '.', '') }} <del>฿{{ number_format((float)$u->price, 2, '.', '') }} </del></p>
                                                 </div>
                                             </div>
@@ -54,16 +54,16 @@
                                         @else
                                         <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6 col-6 ">
                                         <div class="ps-product">
-                                            <div class="ps-product__thumbnail"><a href="#"><img src="{{ url('img/product/'.$u->image) }}" alt="{{ $u->name }}"></a>
+                                            <div class="ps-product__thumbnail"><a class="get_download" data-id="{{ $u->id_p }}"><img src="{{ url('img/product/'.$u->image) }}" alt="{{ $u->name }}"></a>
                                             <div class="ps-product__badge hot">
                                                     <img src="{{ url('img/brand/'.$u->image_brand) }}" alt="{{ $u->title_brand }}">
                                                 </div>
                                             </div>
-                                            <div class="ps-product__container"><a class="ps-product__vendor" href="#">{{ $u->name_cat }}</a>
-                                                <div class="ps-product__content"><a class="ps-product__title" href="#">{{ $u->name }}</a>
+                                            <div class="ps-product__container"><a class="ps-product__vendor" data-id="{{ $u->id_p }}">{{ $u->name_cat }}</a>
+                                                <div class="ps-product__content"><a class="ps-product__title" data-id="{{ $u->id_p }}">{{ $u->name }}</a>
                                                     <p class="ps-product__price">฿{{ number_format((float)$u->price, 2, '.', '') }}</p>
                                                 </div>
-                                                <div class="ps-product__content hover"><a class="ps-product__title" href="#">{{ $u->name }}</a>
+                                                <div class="ps-product__content hover"><a class="ps-product__title" data-id="{{ $u->id_p }}">{{ $u->name }}</a>
                                                     <p class="ps-product__price">฿{{ number_format((float)$u->price, 2, '.', '') }}</p>
                                                 </div>
                                             </div>
