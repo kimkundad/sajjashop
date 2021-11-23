@@ -38,9 +38,11 @@ homepage
                     </div>
                     </div>
                     <div class="col-md-12">
+                        @if(isset(setting()->image_1))
                         <a class="ps-collection" href="{{ setting()->url_img1 }}">
                             <img src="{{ url('img/setting/'.setting()->image_1) }}" alt="">
                         </a>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -71,9 +73,11 @@ homepage
                 </div>
                 </div>
                 <div class="ps-section__right">
+                @if(isset(setting()->image_1))
                     <a class="ps-collection" href="{{ setting()->url_img1 }}">
                         <img src="{{ url('img/setting/'.setting()->image_1) }}" alt="">
                     </a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -154,10 +158,11 @@ homepage
 
         <div class="ps-promotions">
             <div class="container">
+            @if(isset(setting()->image_2))
                 <a class="ps-collection" href="{{ setting()->url_img2 }}">
                     <img src="{{ url('img/setting/'.setting()->image_2) }}" alt="">
                 </a>
-               
+               @endif
             </div>
         </div>
         <div class="ps-product-list ps-clothings">

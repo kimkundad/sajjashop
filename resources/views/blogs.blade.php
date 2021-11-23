@@ -53,10 +53,11 @@
                 </div>
                 <div class="ps-blog__right">
                     <aside class="widget widget--blog widget--search">
+                    @if(isset(setting()->image_4))
                         <a href="{{ setting()->url_img4 }}">
                             <img src="{{ url('img/setting/'.setting()->image_4) }}" alt="">
                         </a>
-                        
+                    @endif
                     </aside>
                     
                     

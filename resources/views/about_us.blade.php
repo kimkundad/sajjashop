@@ -20,7 +20,9 @@
     <div class="ps-page--single" id="about-us">
         <div class="ps-about-intro" style="padding: 50px 0; 100px 0">
             <div class="container">
+            @if(isset(setting()->image_3))
             <img src="{{ url('img/setting/'.setting()->image_3) }}" alt="">
+            @endif
                 <br><br>
                 <div class="ps-section__header">
                 
