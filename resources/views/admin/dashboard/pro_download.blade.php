@@ -43,11 +43,12 @@
                         </thead>
                         <tbody>
                       
+
 						@if(isset($sub2))
                       @foreach($sub2 as $u)
                           <tr access_id="{{$u->id_p}}">
                             <td>
-                              {{$u->name}}
+                              {{$u->name_u}}
                             </td>
                             <td>
                               {{$u->phone}}

@@ -50,6 +50,7 @@ class DashboardController extends Controller
                 'mycategories.*',
                 'mycategories.created_at as create',
                 'mycategories.status as statusp',
+                'mycategories.name as name_u',
                 'products.*',
                 'products.name as name_p',
                 'products.id as id_p',
