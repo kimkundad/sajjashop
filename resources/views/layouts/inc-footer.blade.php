@@ -63,8 +63,8 @@
                 <aside class="widget widget_footer">
                     <h4 class="widget-title">คำถามและข้อสงสัย</h4>
                     <ul class="ps-list--link">
-                        <li><a href="#">วิธีการสั่งซื้อสินค้า</a></li>
-                        <li><a href="#">การรับสินค้าด้วยตนเอง</a></li>
+                        <li><a href="{{  url('/delivery') }}">วิธีการสั่งซื้อสินค้า</a></li>
+                        <li><a href="{{  url('/delivery') }}">การรับสินค้าด้วยตนเอง</a></li>
                         <li><a href="{{  url('/payment_option') }}">วิธีการชำระเงิน</a></li>
                         <li><a href="{{  url('/delivery') }}">วิธีการจัดส่ง</a></li>
                     </ul>
