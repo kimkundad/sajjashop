@@ -20,7 +20,6 @@
     <meta property="og:description" content="{{ setting()->facebook_detail }}">
     @endif
 
-    favicon.png
 
     @include('layouts.inc-style')
 
