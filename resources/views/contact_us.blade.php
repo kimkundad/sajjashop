@@ -25,7 +25,7 @@
             <div id="map" style="width:100%; border:0; height:512px;" frameborder="0"></div>
             <br><br>
                 <div class="ps-section__header text-center">
-                    <h4>ติดต่อบริษัท ช.พานิช หลานหลวง จำกัด</h4>
+                    <h4>ติดต่อเรา สัจจะวัสดุ</h4>
                     <br>
                 </div>
                 <div class="ps-section__content">
@@ -34,9 +34,9 @@
                             <div class="ps-block--contact-info">
                                 <h4>ติดต่อสอบถาม</h4>
                                 <p>
-                                    <a href="#">เลขประจำตัวผู้เสียภาษี : 0105 5520 47621</a>
-                                    <span>อีเมล์ : contact@chopanich.com</span> <br>
-                                    <span>แฟกซ์ : 02-433-4018</span>
+                                    <a href="#">เลขประจำตัวผู้เสียภาษี : 0105545062393</a>
+                                    <span>อีเมล์ : {{ setting()->email }}</span> <br>
+                                    <span>เบอร์ติดต่อ : {{ setting()->phone }}</span>
                                 </p>
                             </div>
                         </div>
