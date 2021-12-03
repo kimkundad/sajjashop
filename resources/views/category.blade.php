@@ -29,7 +29,7 @@
                 <div class="row">
                 @if(isset($ban))
                  @foreach($ban as $u)
-                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-4 ">
+                    <div class="col-xl-1 col-lg-3 col-md-4 col-sm-4 col-4 ">
                     <a href="{{ url('category?id=0&brand='.$u->id) }}">
                         <div class="ps-block--category" data-mh="categories">
                             <div class="ps-block__thumbnail"><img src="{{ url('/img/brand/'.$u->image_brand) }}" alt="{{ $u->title_brand }}" class="img-responsive"></div>
