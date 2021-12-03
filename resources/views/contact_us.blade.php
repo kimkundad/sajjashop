@@ -104,7 +104,7 @@
 <script src="{{url('assets/js/markerclusterer.js')}}"></script>
 <script>
     function initialize() {
-        var center = new google.maps.LatLng(13.750557034664737, 100.564706325531);
+        var center = new google.maps.LatLng(13.784499, 100.5625082);
         var image = '{{ url('assets/img/pin_map.png') }}';
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 17,
@@ -114,7 +114,7 @@
 
         var markers = [];
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(13.750557034664737, 100.564706325531),
+            position: new google.maps.LatLng(13.784499, 100.5625082),
             icon: image
         });
         markers.push(marker);
