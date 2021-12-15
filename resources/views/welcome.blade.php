@@ -195,10 +195,10 @@ homepage
                             </div>
                             <div class="ps-product__container"><a class="ps-product__vendor get_download" data-id="{{ $u->id_p }}">{{ $u->name_cat }}</a>
                                 <div class="ps-product__content"><a class="ps-product__title get_download" data-id="{{ $u->id_p }}">{{ $u->name }}</a>
-                                    <p class="ps-product__price sale">฿{{ number_format((float)$final_price, 2, '.', '') }} <del>฿{{ number_format((float)$u->price, 2, '.', '') }} </del></p>
+                                   <!-- <p class="ps-product__price sale">฿{{ number_format((float)$final_price, 2, '.', '') }} <del>฿{{ number_format((float)$u->price, 2, '.', '') }} </del></p> -->
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title get_download" data-id="{{ $u->id_p }}">{{ $u->name }}</a>
-                                    <p class="ps-product__price sale">฿{{ number_format((float)$final_price, 2, '.', '') }} <del>฿{{ number_format((float)$u->price, 2, '.', '') }} </del></p>
+                                   <!-- <p class="ps-product__price sale">฿{{ number_format((float)$final_price, 2, '.', '') }} <del>฿{{ number_format((float)$u->price, 2, '.', '') }} </del></p> -->
                                 </div>
                             </div>
                         </div>
@@ -211,10 +211,10 @@ homepage
                             </div>
                             <div class="ps-product__container"><a class="ps-product__vendor get_download" data-id="{{ $u->id_p }}">{{ $u->name_cat }}</a>
                                 <div class="ps-product__content"><a class="ps-product__title get_download" data-id="{{ $u->id_p }}">{{ $u->name }}</a>
-                                    <p class="ps-product__price">฿{{ number_format((float)$u->price, 2, '.', '') }}</p>
+                                  <!--  <p class="ps-product__price">฿{{ number_format((float)$u->price, 2, '.', '') }}</p> -->
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title get_download" href="#">{{ $u->name }}</a>
-                                    <p class="ps-product__price">฿{{ number_format((float)$u->price, 2, '.', '') }}</p>
+                                   <!-- <p class="ps-product__price">฿{{ number_format((float)$u->price, 2, '.', '') }}</p> -->
                                 </div>
                             </div>
                         </div>
@@ -259,10 +259,10 @@ homepage
                             </div>
                             <div class="ps-product__container"><a class="ps-product__vendor get_download" data-id="{{ $u->id_p }}">{{ $u->name_cat }}</a>
                                 <div class="ps-product__content"><a class="ps-product__title get_download" data-id="{{ $u->id_p }}">{{ $u->name }}</a>
-                                    <p class="ps-product__price sale">฿{{ number_format((float)$final_price, 2, '.', '') }} <del>฿{{ number_format((float)$u->price, 2, '.', '') }} </del></p>
+                                 <!--   <p class="ps-product__price sale">฿{{ number_format((float)$final_price, 2, '.', '') }} <del>฿{{ number_format((float)$u->price, 2, '.', '') }} </del></p> -->
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title get_download" data-id="{{ $u->id_p }}">{{ $u->name }}</a>
-                                    <p class="ps-product__price sale">฿{{ number_format((float)$final_price, 2, '.', '') }} <del>฿{{ number_format((float)$u->price, 2, '.', '') }} </del></p>
+                                 <!--   <p class="ps-product__price sale">฿{{ number_format((float)$final_price, 2, '.', '') }} <del>฿{{ number_format((float)$u->price, 2, '.', '') }} </del></p> -->
                                 </div>
                             </div>
                         </div>
@@ -275,10 +275,10 @@ homepage
                             </div>
                             <div class="ps-product__container"><a class="ps-product__vendor get_download" data-id="{{ $u->id_p }}">{{ $u->name_cat }}</a>
                                 <div class="ps-product__content"><a class="ps-product__title get_download" data-id="{{ $u->id_p }}">{{ $u->name }}</a>
-                                    <p class="ps-product__price">฿{{ number_format((float)$u->price, 2, '.', '') }}</p>
+                                 <!--   <p class="ps-product__price">฿{{ number_format((float)$u->price, 2, '.', '') }}</p> -->
                                 </div>
                                 <div class="ps-product__content hover"><a class="ps-product__title get_download" data-id="{{ $u->id_p }}">{{ $u->name }}</a>
-                                    <p class="ps-product__price">฿{{ number_format((float)$u->price, 2, '.', '') }}</p>
+                                  <!--  <p class="ps-product__price">฿{{ number_format((float)$u->price, 2, '.', '') }}</p> -->
                                 </div>
                             </div>
                         </div>

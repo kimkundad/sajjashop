@@ -78,16 +78,16 @@ window.gaTitle = 'หน้าแรก';
             </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group hidden">
           <label for="exampleInputUsername1">ราคาสินค้า <span class="text-danger">*</span></label>
           <input type="text" class="form-control" name="price" value="{{ $objs->price }}" placeholder="250.50">
         </div>
 
-        <div class="form-group">
+        <div class="form-group hidden">
           <label for="exampleInputUsername1">ส่วนลดสินค้า  <span class="text-danger">*ลดเป็นเปอร์เซ็น ใส่แต่ตัวเลข หรือ ถ้าไม่มีให้ใส่ 0</span></label>
           <input type="text" class="form-control" name="discount" value="{{ $objs->discount }}" placeholder="15">
         </div>
-        <div class="form-group">
+        <div class="form-group hidden">
           <label for="exampleInputUsername1">สินค้าคงเหลือ  <span class="text-danger"> ถ้าไม่มีให้ใส่ 0</span></label>
           <input type="text" class="form-control" name="stock" value="{{ $objs->stock }}" placeholder="15">
         </div>

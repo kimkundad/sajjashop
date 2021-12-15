@@ -34,7 +34,7 @@
         </div>
         <div class="ps-vendor-banner bg--cover" data-background="{{ url('assets/img/bg/vendor.jpg') }}">
             <div class="container">
-                <h2>ระยะเวลาในการจัดส่งสินค้าไม่รวมวันเสาร์-อาทิตย์ วันหยุดราชการ และวันขัตฤกษ์ (หากยังไม่ได้รับสินค้าให้ภายใน 7 วัน กรุณาติดต่อกลับมาทางบริษัท)</h2>
+                <h2>ระยะเวลาการจัดส่งสินค้า ระยะเวลาในการจัดส่งสินค้าไม่รวมวันเสาร์-อาทิตย์</h2>
             </div>
         </div>
 
@@ -50,7 +50,10 @@
                     <h4>ระยะเวลาการจัดส่งสินค้า</h4>
                     <p>ระยะเวลาในการจัดส่งสินค้าไม่รวมวันเสาร์-อาทิตย์ วันหยุดราชการ และวันขัตฤกษ์ (หากยังไม่ได้รับสินค้าให้ภายใน 7 วัน กรุณาติดต่อกลับมาทางบริษัท)</p>
 
-                    <div class="table-responsive">
+                    <h4>วิธีการจัดส่ง</h4>
+                    <p>จัดส่งด้วยรถขนส่ง ตามวันและเวลา ที่อยู่ที่ลูกค้านัด</p>
+
+                 <!--   <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -102,22 +105,22 @@
                                 </tr>
                             </tbody>
                         </table>
-                        </div>
+                        </div> -->
                     
-                    <div class="ps-section__highlight"><img src="{{ url('assets/img/icons/vendor-4.png') }}" alt="">
+                 <!--   <div class="ps-section__highlight"><img src="{{ url('assets/img/icons/vendor-4.png') }}" alt="">
                         <figure>
                             <p>ค่าจัดส่งสินค้า 69 บาทต่อการส่งหนึ่งครั้ง ไม่คิดค่าจัดส่งกรณีมียอดเงินการซื้อรวมภาษีมากกว่า 3,000 บาทขึ้นไป หากสินค้าจำเป็นต้องจัดส่งผ่านขนส่งเอกชน ขอความกรุณาลูกค้าเป็นผู้ชำระค่าขนส่งปลายทาง</p>
                         </figure>
-                    </div>
+                    </div> -->
                     <div class="ps-section__footer">
-                        <p>เปิดทำการ : จันทร์-เสาร์ 8:00 - 17:45 น. โทร : 02-115-9000 โทร : 063-535-8355</p>
+                        <p>เปิดบริการทุกวัน 08:30 - 19:00 น.  โทร : 095-846-7417</p>
                     </div>
                 </div>
             </div>
         </div>
         
         
-        <div class="ps-section--vendor ps-vendor-milestone">
+        <div class="ps-section--vendor ps-vendor-milestone hidden">
             <div class="container">
                 <div class="ps-section__header">
                     <p>การทำงานและขั้นตอนการจัดส่งสินค้า</p>

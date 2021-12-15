@@ -15,4 +15,7 @@
     background: #DB1B32;
     height: 60px;
 }
+.hidden{
+  display:none
+}
   </style>

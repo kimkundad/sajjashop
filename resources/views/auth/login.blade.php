@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('title')
-ข่าวประชาสัมพันธ์
+เข้าสู่ระบบ
 @stop
 
 @section('stylesheet')
