@@ -10,6 +10,7 @@
       <div class="modal-body">
                 <form class="ps-form--contact-us" id="get_my_category">
                     <h4>กรอกข้อมูลก่อน ดาวน์โหลด แคตตาล็อก</h4>
+                    <p>**แคตตาล็อกจะถูกส่งไปยังอีเมลของท่าน</p>
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
                             <div class="form-group">
@@ -22,6 +23,18 @@
                                 <input class="form-control" type="text" id="modal_phone" name="modal_phone" placeholder="เบอร์โทรติดต่อ *">
                             </div>
                         </div>
+                        <div class="col-12 ">
+                            <div class="form-group">
+                                <input class="form-control" type="text" id="modal_email" name="modal_email" placeholder="อีเมลติดต่อ *">
+                            </div>
+                        </div>
+                        <div class=" col-12">
+                        <div class="form-group">
+                                <div class="g-recaptcha" data-sitekey="6LdQnlkUAAAAAOfsIz7o-U6JSgrSMseulLvu7lI8"></div>
+                                <br>
+                            </div>
+                        
+                        </div>
                         
                     </div>
                    
@@ -33,3 +46,4 @@
       </div>
     </div>
   </div>
+  <script src='https://www.google.com/recaptcha/api.js?hl=th'></script>

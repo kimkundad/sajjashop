@@ -18,6 +18,7 @@
     <script src="{{ url('assets/js/main.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.6/dist/loadingoverlay.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js?hl=th'></script>
 
     {!! setting()->google_analytic !!}
     <style type="text/css">
@@ -63,12 +64,12 @@ function bindEvents() {
     var modal_name = document.getElementById("modal_name").value;
     var modal_phone = document.getElementById("modal_phone").value;
     var modal_id = document.getElementById("modal_id").value;
-    
+    var modal_email = document.getElementById("modal_email").value;
     var key = this.getAttribute('data-key');
     if (key == 'ยืนยัน') {
       $('#myModal').modal('hide');
 
-    if(modal_name === '' || modal_phone === ''){
+    if(modal_name === '' || modal_phone === '' || modal_email === ''){
       swal("กรูณา ป้อนข้อมูลให้ครบ");
     } else{
 
@@ -79,14 +80,17 @@ function bindEvents() {
           modal_name: modal_name, 
           modal_phone: modal_phone,
           modal_id: modal_id,
+          modal_email: modal_email
           },
       type: 'POST',
       success: function (data) {
         if(data.status = 200){
 
-          var URL = "{{ url('/img/pdf_product/') }}/" + data.files;
-          swal("สำเร็จ!", "ส่งข้อมูลสำเร็จ", "success");
+       //   var URL = "{{ url('/img/pdf_product/') }}/" + data.files;
+          swal("สำเร็จ!", "ส่งข้อมูลไปยังอีเมลสำเร็จ", "success");
           window.open(URL, "_blank");
+        }else{
+          swal("กรุณากรอกข้อมูลให้ครบ!");
         }
       },
       error: function () {

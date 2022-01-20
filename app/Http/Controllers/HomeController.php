@@ -256,15 +256,38 @@ class HomeController extends Controller
 
 
     public function mycategories(Request $request){
+
+
+      $secret=env('reCAPTCHA');
+
+      $captcha = "";
+      if (isset($request["g-recaptcha-response"]))
+      $captcha = $request["g-recaptcha-response"];
+
+      $response = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secret."&response=".$captcha."&remoteip=".$_SERVER["REMOTE_ADDR"]), true);
+
+    if($response["success"] == false) {
+
+
+        return response()->json([
+          'data' => [
+            'status' => 100,
+            'msg' => 'This user was not verified by recaptcha_1.'
+          ]
+        ]);
+
+      }else{
       
       $this->validate($request, [
         'modal_name' => 'required',
-        'modal_phone' => 'required'
+        'modal_phone' => 'required',
+        'modal_email' => 'required'
       ]);
 
       $package = new mycategory();
       $package->name = $request['modal_name'];
       $package->phone = $request['modal_phone'];
+      $package->email = $request['modal_email'];
       $package->text1 = $request['modal_id'];
       $package->save();
 
@@ -272,10 +295,23 @@ class HomeController extends Controller
 
       $objs = product::find($id);
 
+
+      $details = [
+        'title' => $objs->name,
+        'fname' => $request['modal_name'],
+        'image' => $objs->image,
+        'url' => url('/img/pdf_product/'.$objs->price_image)
+    ];
+
+   // dd($details);
+   
+    \Mail::to(Auth::user()->email)->send(new \App\Mail\Regismail($details));
+
       return response()->json([
-        'status' => 200,
-        'files' => $objs->price_image
+        'status' => 200
       ]);
+
+    }
 
     }
 
