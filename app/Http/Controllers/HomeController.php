@@ -305,7 +305,7 @@ class HomeController extends Controller
 
    // dd($details);
    
-    \Mail::to(Auth::user()->email)->send(new \App\Mail\Regismail($details));
+    \Mail::to($request['modal_email'])->send(new \App\Mail\Regismail($details));
 
       return response()->json([
         'status' => 200
