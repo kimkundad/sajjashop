@@ -56,11 +56,15 @@
                                         <label for="remember-me">จดจำฉันไว้ในระบบ</label>
                                     </div>
                                 </div>
+                                
                                 <div class="form-group submtit">
                                     <button type="submit" class="ps-btn ps-btn--fullwidth">เข้าสู่ระบบ</button>
                                 </div>
+
+                                <h5 style="    margin: 0 0 0px;"><a class="text-primary" href="{{ route('password.request') }}">ลืมพาสเวิร์ด</a></h5>
                             </div>
                             <div class="ps-form__footer">
+                            
                             <h5><a href="{{ url('register') }}">ถ้ายังไม่มีบัญชี ให้สร้างบัญชีก่อน <span class="text-primary" >สมัครสมาชิก</span> </a></h5>
                             
                             </div>
