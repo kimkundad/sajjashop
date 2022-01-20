@@ -109,7 +109,7 @@ function bindEvents() {
 $('.send_download_category').click(function(e){
        e.preventDefault();
        $('#myModal').modal('hide');
-       swal("สำเร็จ!", "ส่งข้อมูลสำเร็จ", "success");
+     //  swal("สำเร็จ!", "ส่งข้อมูลสำเร็จ", "success");
 
 })
 
