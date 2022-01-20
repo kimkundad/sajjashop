@@ -101,23 +101,49 @@
                 </div>
                 <div class="header__right">
                     <div class="header__actions">
+                        
                         <div class="ps-block--user-header">
                             <div class="ps-block__left"><i class="icon-bubbles"></i></div>
                             <div class="ps-block__right">
                                 <a href="{{ url('login') }}" style="padding-top: 6px">{{ setting()->phone }}</a>
                             </div>
                         </div>
+                  
+                        @if (Auth::guest())
                     
                         <div class="ps-block--user-header">
-                            <div class="ps-block__left"><i class="icon-user"></i></div>
+                            <div class="ps-block__left">
+                                <i class="icon-user"></i></div>
                             <div class="ps-block__right">
-                                 @if (Auth::guest())
-                                <a href="{{ url('login') }}" style="padding-top: 5px">เข้าสู่ระบบ</a>
-                                @else
-                                <a href="{{ url('admin/dashboard') }}" style="padding-top: 5px">Administrator</a>
-                                @endif
+                                 
+                                <a href="{{ url('login') }}" >เข้าสู่ระบบ</a>
+                                <a href="{{ url('register') }}">สมัครสมาชิก</a>
+                              
+                                    
+                               
+                      
                             </div>
                         </div>
+                        @else
+
+                        <div class="ps-block--user-account"><i class="icon-user"></i>
+                        
+                                    @if(Auth::user()->is_admin == 1)
+                                    <a href="{{ url('admin/dashboard') }}" style="color: #fff;">{{Auth::user()->name}}</a>
+                                    @else
+                                    <a href="{{ url('/') }}" style="color: #fff;">{{Auth::user()->name}}</a>
+                                    @endif
+                            <div class="ps-block__content">
+                                <ul class="ps-list--arrow">
+                                    <li><a href="{{ url('profile') }}">ข้อมูลผู้ใช้งาน</a></li>
+                                    <li class="ps-block__footer"><a href="{{ url('logout') }}">ออกจากระบบ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        @endif
+
+
                     </div>
                 </div>
             </div>
@@ -177,6 +203,29 @@
             <div class="navigation__left">
                 <a class="ps-logo" href="{{  url('/') }}"><img src="{{ url('assets/img/logo-sajja-all-size_v2.png') }}" alt=""></a>
             </div>
+            <div class="navigation__right">
+
+            <div class="header__actions">
+                    
+                    <div class="ps-block--user-header">
+                        <div class="ps-block__left"> @if (Auth::guest())<a href="{{ url('login') }}"><i class="icon-user"></i> </a>@endif</div>
+                        <div class="ps-block__right">
+                        @if (Auth::guest())
+                        <a href="{{ url('login') }}">เข้าสู่ระบบ</a>
+                        <a href="{{ url('register') }}">สมัครสมาชิก</a></div>
+                        @else
+                                    @if(Auth::user()->is_admin == 1)
+                                    <a href="{{ url('admin/dashboard') }}" style="padding-top: 5px">{{Auth::user()->name}}</a>
+                                    @else
+                                    <a href="{{ url('/') }}" style="padding-top: 5px">{{Auth::user()->name}}</a>
+                                    @endif
+                        @endif
+                    </div>
+                </div>
+
+            </div>
+
+
             
         </div>
         <div class="ps-search--mobile">
@@ -269,7 +318,13 @@
                                 <li class="current-menu-item "><a href="{{  url('/delivery') }}"> วิธีการจัดส่ง </a></li>
                                 <li class="current-menu-item "><a href="{{  url('/policy') }}"> นโยบายความเป็นส่วนตัว </a></li>
                                 <li class="current-menu-item "><a href="{{  url('/terms') }}"> ข้อตกลงและเงื่อนไข </a></li>
+                                @if (Auth::guest())
                                 <li class="current-menu-item "><a href="{{  url('/login') }}"> เข้าสู่ระบบ </a></li>
+                                <li class="current-menu-item "><a href="{{  url('/register') }}"> สมัครสมาชิก </a></li>
+                                @else
+                                <li class="current-menu-item "><a href="{{  url('/profile') }}"> ข้อมูลผู้ใช้งาน </a></li>
+                                <li class="current-menu-item "><a href="{{  url('/logout') }}"> ออกจากระบบ </a></li>
+                                @endif
 
             </ul>
         </div>

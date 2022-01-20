@@ -31,7 +31,7 @@
                     <div class="ps-tabs">
                         <div class="ps-tab active" id="sign-in">
                             <div class="ps-form__content">
-                                <h5>Log In Your Account</h5>
+                                <h5>เข้าสู่ระบบบัญชีของคุณ</h5>
 
                                 @error('email')
                                 <div class="alert alert-warning" role="alert">
@@ -53,15 +53,15 @@
                                 <div class="form-group">
                                     <div class="ps-checkbox">
                                         <input class="form-control" type="checkbox" id="remember-me" name="remember">
-                                        <label for="remember-me">Remember me</label>
+                                        <label for="remember-me">จดจำฉันไว้ในระบบ</label>
                                     </div>
                                 </div>
                                 <div class="form-group submtit">
-                                    <button type="submit" class="ps-btn ps-btn--fullwidth">Login</button>
+                                    <button type="submit" class="ps-btn ps-btn--fullwidth">เข้าสู่ระบบ</button>
                                 </div>
                             </div>
                             <div class="ps-form__footer">
-                                
+                            <h5><a href="{{ url('register') }}">ถ้ายังไม่มีบัญชี ให้สร้างบัญชีก่อน <span class="text-primary" >สมัครสมาชิก</span> </a></h5>
                             
                             </div>
                         </div>

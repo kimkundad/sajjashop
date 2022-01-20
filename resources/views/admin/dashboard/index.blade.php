@@ -71,6 +71,15 @@
                         <i class="icon-people text-primary icon-lg"></i>
                       </div>
                     </div>
+                    <div class="col-md-6 col-lg-3">
+                      <div class="d-flex justify-content-between card-statistics-item">
+                        <div>
+                          <h1>{{ $sub3 }}</h1>
+                          <p class="text-muted mb-0">สมาชิกทั้งหมด</p>
+                        </div>
+                        <i class="icon-user text-primary icon-lg"></i>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

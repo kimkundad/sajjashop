@@ -3832,6 +3832,7 @@ textarea.form-control {
   display: block;
   font-weight: 700;
   line-height: 18px;
+  font-size: 14px;
 }
 
 .ps-block--user-header .ps-block__right a:hover {

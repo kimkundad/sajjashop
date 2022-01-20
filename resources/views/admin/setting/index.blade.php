@@ -37,6 +37,11 @@ window.gaTitle = 'หน้าแรก';
         </div>
 
         <div class="form-group">
+          <label for="exampleInputEmail1">เกี่ยวกับเรา <span class="text-danger">*</span></label>
+          <textarea class="summernote form-control" id="textareaAutosize" name="about" >{{ $objs->about }}</textarea>
+        </div>
+
+        <div class="form-group">
           <label for="exampleInputUsername1">เบอร์ติดต่อ <span class="text-danger">*</span></label>
           <input type="text" class="form-control" id="exampleInputUsername1" name="phone" value="{{ $objs->phone }}">
         </div>
@@ -259,8 +264,58 @@ window.gaTitle = 'หน้าแรก';
 
 <script>
 
+$(document).ready(function() {
+  $('.summernote').summernote({
+    height: 550,
+    fontSizes: ['8', '9', '10', '11', '12', '14', '18', '24', '36', '48' , '64', '82', '150'],
+    fontNames: ['Arial', 'Prompt', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Helvetica', 'Impact', 'Tahoma', 'Times New Roman', 'Verdana', 'Roboto'],
+    popover: {
+            image: [
+                ['custom', ['imageAttributes']],
+                ['imagesize', ['imageSize100', 'imageSize50', 'imageSize25']],
+                ['float', ['floatLeft', 'floatRight', 'floatNone']],
+                ['remove', ['removeMedia']]
+            ],
+        },
+        imageAttributes:{
+            icon:'<i class="note-icon-pencil"/>',
+            removeEmpty:false, // true = remove attributes | false = leave empty if present
+            disableUpload: false // true = don't display Upload Options | Display Upload Options
+        },
+  callbacks: {
+  onImageUpload: function(image) {
+  editor = $(this);
+  uploadImageContent(image[0], editor);
+  }
+  }
+});
 
 
+
+  function uploadImageContent(image, editor) {
+    var data = new FormData();
+    data.append("image", image);
+    $.ajax({
+        headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+        url: "{{ url('api/upload_img') }}",
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: data,
+        type: "post",
+        success: function(url) {
+        var image = $('<img>').attr({src: url, width: '100%'});
+        $(editor).summernote("insertNode", image[0]);
+        },
+        error: function(data) {
+        console.log(data);
+        }
+    });
+  }
+
+
+
+});
 
 </script>
 @stop('scripts')

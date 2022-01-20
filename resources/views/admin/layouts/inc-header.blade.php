@@ -43,6 +43,10 @@
             </li>
 
             <li class="nav-item">
+              <a href="{{ url('admin/users') }}" class="nav-link"><i class="link-icon icon-user"></i><span class="menu-title">สมาชิก</span></a>
+            </li>
+
+            <li class="nav-item">
               <a href="#" class="nav-link"><i class="link-icon icon-handbag"></i><span class="menu-title">จัดการสินค้า</span><i class="menu-arrow"></i></a>
               <div class="submenu">
                 <ul class="submenu-item">

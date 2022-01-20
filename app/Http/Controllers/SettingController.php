@@ -54,6 +54,7 @@ class SettingController extends Controller
             $obj->url_img2 = $request['url_img2'];
             $obj->url_img3 = $request['url_img3'];
             $obj->url_img4 = $request['url_img4'];
+            $obj->about = $request['about'];
             $obj->save();
 
            if($image != NULL){

@@ -86,6 +86,8 @@
     display: block!important;
 }
 }
-
+.ps-block--user-account i {
+    color: #fff;
+}
 
     </style>

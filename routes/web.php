@@ -68,11 +68,20 @@ Route::post('/api/add_contact', 'HomeController@add_contact')->name('add_contact
 Route::post('/api/add_quotation', 'HomeController@add_quotation')->name('add_quotation');
 Route::post('/api/subscribe', 'HomeController@subscribe')->name('subscribe');
 
+Route::group(['middleware' => ['UserRole:manager|employee|customer']], function() {
+
+    Route::get('/profile', 'ProfileController@index');
+    Route::post('/update_profile', 'ProfileController@update_profile');
+    
+});
+
 Route::group(['middleware' => ['UserRole:manager|employee']], function() {
 
     Route::get('admin/dashboard', 'DashboardController@index');
     Route::get('admin/pro_download', 'DashboardController@pro_download');
  
+    Route::resource('admin/users', 'UsersController');
+    Route::get('api/del_user/{id}', 'UsersController@del_user')->name('del_user');
 
     Route::resource('admin/blog', 'BlogController');
     Route::post('/api/upload_img', 'BlogController@upload_img')->name('home');

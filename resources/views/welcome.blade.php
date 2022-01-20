@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('title')
-homepage
+สัจจะวัสดุ ร้านค้าที่จัดจําหน่ายวัสดุงานระบบไฟฟ้าที่มีคุณภาพและมีความหลากหลายให้แก่ลูกค้า
 @stop
 
 @section('stylesheet')
@@ -15,7 +15,7 @@ homepage
         <div class="ps-home-banner visible-xs">
             <div class="">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12" style="padding-right: 0px;">
                     <div class="ps-carousel--nav-inside owl-slider" 
                         data-owl-auto="true" 
                         data-owl-loop="true" 
@@ -37,7 +37,7 @@ homepage
                         @endif
                     </div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-12" style="padding-right: 0px;">
                         @if(isset(setting()->image_1))
                         <a class="ps-collection" href="{{ setting()->url_img1 }}">
                             <img src="{{ url('img/setting/'.setting()->image_1) }}" alt="">

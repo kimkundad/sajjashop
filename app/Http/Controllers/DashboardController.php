@@ -33,7 +33,13 @@ class DashboardController extends Controller
 
         $sub2 = DB::table('subscribes')
                 ->count();
+
+                $sub3 = DB::table('users')
+                ->count();
+
+                
         $data['sub2'] = $sub2;
+        $data['sub3'] = $sub3;
 
         $load = DB::table('mycategories')
                 ->count();
