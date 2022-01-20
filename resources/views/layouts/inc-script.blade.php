@@ -81,7 +81,7 @@ function bindEvents() {
           modal_phone: modal_phone,
           modal_id: modal_id,
           modal_email: modal_email,
-          g-recaptcha-response: grecaptcha.getResponse()
+          g_recaptcha_response: grecaptcha.getResponse()
           },
       type: 'POST',
       success: function (data) {

@@ -261,8 +261,8 @@ class HomeController extends Controller
       $secret=env('reCAPTCHA');
 
       $captcha = "";
-      if (isset($request["g-recaptcha-response"]))
-      $captcha = $request["g-recaptcha-response"];
+      if (isset($request["g_recaptcha_response"]))
+      $captcha = $request["g_recaptcha_response"];
 
       $response = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secret."&response=".$captcha."&remoteip=".$_SERVER["REMOTE_ADDR"]), true);
 
