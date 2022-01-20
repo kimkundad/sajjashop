@@ -30,7 +30,9 @@ Reset Password
         <div class="ps-my-account">
             <div class="container">
                 <form class="ps-form--account ps-tab-root" method="POST" action="{{ route('password.update') }}">
-                    {{ csrf_field() }}
+                @csrf
+
+<input type="hidden" name="token" value="{{ $token }}">
                     <ul class="ps-tab-list">
                         <li class="active"><a href="#sign-in">Reset Password</a></li>
                     </ul>
@@ -52,7 +54,7 @@ Reset Password
                                 @enderror
 
                                 <div class="form-group">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email address" autofocus>
+                                <input type="email" class="input-text" name="email" value="{{ $email ?? old('email') }}" placeholder="Email Address" required autofocus/>
                                    
                                 </div>
 
