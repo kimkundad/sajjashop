@@ -54,7 +54,7 @@ Reset Password
                                 @enderror
 
                                 <div class="form-group">
-                                <input type="email" class="input-text" name="email" value="{{ $email ?? old('email') }}" placeholder="Email Address" required autofocus/>
+                                <input type="email" class="form-control" name="email" value="{{ $email ?? old('email') }}" placeholder="Email Address" required autofocus/>
                                    
                                 </div>
 
