@@ -53,7 +53,7 @@
                                 <div class="form-group">
                                     <div class="ps-checkbox">
                                         <input class="form-control" type="checkbox" id="remember-me" name="remember">
-                                        <label for="remember-me">Rememeber me</label>
+                                        <label for="remember-me">Remember me</label>
                                     </div>
                                 </div>
                                 <div class="form-group submtit">
