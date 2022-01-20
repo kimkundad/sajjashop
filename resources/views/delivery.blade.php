@@ -113,12 +113,13 @@
                         </figure>
                     </div> -->
                     <div class="ps-section__footer">
-                        <p>เปิดบริการทุกวัน 08:30 - 19:00 น.  โทร : 095-846-7417</p>
+                        <p>เปิดทำการ : <strong class="text-danger"> {{ setting()->company_time }}</strong></p>
                     </div>
                 </div>
             </div>
         </div>
         
+
         
         <div class="ps-section--vendor ps-vendor-milestone hidden">
             <div class="container">

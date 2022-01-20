@@ -27,7 +27,7 @@
                 <aside class="widget widget_footer widget_contact-us">
                     <h4 class="widget-title">ติดต่อเรา</h4>
                     <div class="widget_content">
-                        <p>{{ setting()->company_time }}</p>
+                        <p><strong class="text-danger"> {{ setting()->company_time }}</strong></p>
                         <h3>{{ setting()->phone }}</h3>
                         <p>{{ setting()->address }} <br><a href="mailto:{{ setting()->email }}">{{ setting()->email }}</a></p>
                         
