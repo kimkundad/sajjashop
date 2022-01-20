@@ -87,6 +87,12 @@ class QuotationController extends Controller
     public function edit($id)
     {
         //
+        $objs = quotation::find($id);
+
+        $data['url'] = url('admin/quotation/'.$id);
+        $data['method'] = "put";
+        $data['objs'] = $objs;
+        return view('admin.quotation.edit', $data);
     }
 
     /**
