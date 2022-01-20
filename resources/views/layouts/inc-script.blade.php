@@ -88,7 +88,7 @@ function bindEvents() {
 
        //   var URL = "{{ url('/img/pdf_product/') }}/" + data.files;
           swal("สำเร็จ!", "ส่งข้อมูลไปยังอีเมลสำเร็จ", "success");
-          window.open(URL, "_blank");
+         
         }else{
           swal("กรุณากรอกข้อมูลให้ครบ!");
         }
