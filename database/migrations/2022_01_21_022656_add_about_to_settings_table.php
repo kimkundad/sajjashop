@@ -15,7 +15,7 @@ class AddAboutToSettingsTable extends Migration
     {
         Schema::table('settings', function (Blueprint $table) {
             //
-            $table->longText('about')->unique();
+            $table->longText('about')->nullable();
         });
     }
 
