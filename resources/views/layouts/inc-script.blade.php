@@ -85,7 +85,7 @@ function bindEvents() {
           },
       type: 'POST',
       success: function (data) {
-        if(data.data.status = 200){
+        if(data.status = 200){
        //   var URL = "{{ url('/img/pdf_product/') }}/" + data.files;
           swal("สำเร็จ!", "ส่งข้อมูลไปยังอีเมลสำเร็จ", "success");
          
