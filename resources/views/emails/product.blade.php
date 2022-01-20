@@ -202,7 +202,7 @@ a, a:link {color: #1c344d;text-decoration: none !important;}
 																						 {{$details['title']}} </td>
 																					</tr>
 																					<tr>
-																						<td class="font_fix" style="font-size:14px; mso-line-height-rule:exactly; line-height:20px; color:#555555; font-weight:bold; font-family: 'Montserrat', sans-serif;" align="left">
+																						<td class="font_fix" style="font-size:14px; text-align: center; mso-line-height-rule:exactly; line-height:20px; color:#555555; font-weight:bold; font-family: 'Montserrat', sans-serif;" align="left">
 																							<br />
 																						ขอขอบคุณ {{$details['fname']}}  กับการเข้าดาวน์โหลด แคตตาล็อก  </td>
 																					</tr>
