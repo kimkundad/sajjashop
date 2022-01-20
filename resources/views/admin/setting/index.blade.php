@@ -48,7 +48,7 @@ window.gaTitle = 'หน้าแรก';
 
         <div class="form-group">
           <label for="exampleInputUsername1">ที่อยู่ <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" id="exampleInputUsername1" name="address" value="{{ $objs->address }}">
+          <textarea rows='4' type="text" class="form-control"  name="address" value="{{ $objs->address }}"></textarea>
         </div>
         <div class="form-group">
           <label for="exampleInputUsername1">เวลาเปิดบริการ <span class="text-danger">*</span></label>

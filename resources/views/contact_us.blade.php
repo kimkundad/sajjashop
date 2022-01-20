@@ -25,7 +25,7 @@
             <div id="map" style="width:100%; border:0; height:512px;" frameborder="0"></div>
             <br><br>
                 <div class="ps-section__header text-center">
-                    <h4>ติดต่อเรา สัจจะวัสดุ</h4>
+                    <h4>&nbsp </h4>
                     <br>
                 </div>
                 <div class="ps-section__content">

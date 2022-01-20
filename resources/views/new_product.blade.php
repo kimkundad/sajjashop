@@ -42,11 +42,9 @@
                                                 ?>
                                             </div>
                                             <div class="ps-product__container"><a class="ps-product__vendor" href="#">{{ $u->name_cat }}</a>
-                                                <div class="ps-product__content"><a class="ps-product__title" href="#">{{ $u->name }}</a>
-                                                    <p class="ps-product__price sale">฿{{ number_format((float)$final_price, 2, '.', '') }} <del>฿{{ number_format((float)$u->price, 2, '.', '') }} </del></p>
+                                                <div class="ps-product__content"><a class="ps-product__title" href="#">{{ $u->name_cat }}</a>
                                                 </div>
-                                                <div class="ps-product__content hover"><a class="ps-product__title" href="#">{{ $u->name }}</a>
-                                                    <p class="ps-product__price sale">฿{{ number_format((float)$final_price, 2, '.', '') }} <del>฿{{ number_format((float)$u->price, 2, '.', '') }} </del></p>
+                                                <div class="ps-product__content hover"><a class="ps-product__title" href="#">{{ $u->name_cat }}</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -60,11 +58,9 @@
                                                 </div>
                                             </div>
                                             <div class="ps-product__container"><a class="ps-product__vendor" href="#">{{ $u->name_cat }}</a>
-                                                <div class="ps-product__content"><a class="ps-product__title" href="#">{{ $u->name }}</a>
-                                                    <p class="ps-product__price">฿{{ number_format((float)$u->price, 2, '.', '') }}</p>
+                                                <div class="ps-product__content"><a class="ps-product__title" href="#">{{ $u->name_cat }}</a>
                                                 </div>
-                                                <div class="ps-product__content hover"><a class="ps-product__title" href="#">{{ $u->name }}</a>
-                                                    <p class="ps-product__price">฿{{ number_format((float)$u->price, 2, '.', '') }}</p>
+                                                <div class="ps-product__content hover"><a class="ps-product__title" href="#">{{ $u->name_cat }}</a>
                                                 </div>
                                             </div>
                                         </div>

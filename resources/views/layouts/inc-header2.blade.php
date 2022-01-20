@@ -144,7 +144,7 @@
                             <a href="{{ url('about_us') }}">รู้จักกับสัจจะวัสดุ</a>
                         </li>
                         <li>
-                            <a href="{{ url('category') }}">หมวดหมุ่สินค้า</a>
+                            <a href="{{ url('category') }}">หมวดหมู่สินค้า</a>
                         </li>
                         <li>
                             <a href="{{ url('blogs') }}">ข่าวประชาสัมพันธ์</a>
@@ -260,7 +260,7 @@
         <div class="ps-panel__content">
             <ul class="menu--mobile">
                                 <li class="current-menu-item "><a href="{{  url('/about_us') }}"> รู้จักกับสัจจะวัสดุ </a></li>
-                                <li class="current-menu-item "><a href="{{  url('/category') }}"> หมวดหมุ่สินค้า </a></li>
+                                <li class="current-menu-item "><a href="{{  url('/category') }}"> หมวดหมู่สินค้า </a></li>
                                 <li class="current-menu-item "><a href="{{  url('/blogs') }}"> ข่าวประชาสัมพันธ์ </a></li>
 
                                 <li class="current-menu-item "><a href="{{  url('/contact_us') }}"> ติดต่อเรา </a></li>
