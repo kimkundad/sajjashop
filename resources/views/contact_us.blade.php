@@ -44,7 +44,7 @@
                             <div class="ps-block--contact-info">
                                 <h4>ที่อยู่บริษัท</h4>
                                 <p><a>เปิดทำการ : <strong class="text-danger"> {{ setting()->company_time }}</strong></a>
-                                    <span>{!! setting()->address !!}</span></p>
+                                    <span style="white-space: pre-wrap;">{!! setting()->address !!}</span></p>
                             </div>
                         </div>
                         
